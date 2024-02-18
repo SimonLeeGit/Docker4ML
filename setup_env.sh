@@ -1,0 +1,2 @@
+TAG=simon/ml:dev
+NVIDIA_PYTORCH_TAG=23.12-py3

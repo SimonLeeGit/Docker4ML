@@ -1,0 +1,6 @@
+ARG NVIDIA_PYTORCH_TAG
+FROM nvcr.io/nvidia/pytorch:${NVIDIA_PYTORCH_TAG}
+COPY requirements.txt .
+RUN yes | pip install -r requirements.txt
+WORKDIR /workspace
+
