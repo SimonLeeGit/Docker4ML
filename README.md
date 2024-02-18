@@ -44,3 +44,5 @@ You can add your default installed python libraries here.
 ```
 transformers==4.27.1
 ```
+
+By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
