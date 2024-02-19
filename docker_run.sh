@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source setup_env.sh
+WORK_DIR=$(dirname "$BASH_SOURCE")
+source $WORK_DIR/setup_env.sh
 
 ID=$(docker run \
     --rm \
