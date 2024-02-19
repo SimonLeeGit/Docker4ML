@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORK_DIR=$(dirname "$BASH_SOURCE")
+WORK_DIR=$(dirname "$(readlink -f "$0")")
 source $WORK_DIR/setup_env.sh
 
 ID=$(docker run \
@@ -11,7 +11,7 @@ ID=$(docker run \
     --ulimit memlock=-1 \
     --ulimit stack=67108864 \
     -p 6006:6006 \
-    -v $PWD/..:/workspace \
+    -v $PWD:/workspace \
     -w /workspace \
     $TAG)
 

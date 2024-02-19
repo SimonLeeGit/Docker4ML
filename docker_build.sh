@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORK_DIR=$(dirname "$BASH_SOURCE")
+WORK_DIR=$(dirname "$(readlink -f "$0")")
 cd $WORK_DIR
 
 source setup_env.sh
