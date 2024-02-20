@@ -16,4 +16,10 @@ ID=$(docker run \
     $TAG)
 
 docker logs $ID
+
+echo ' '
+echo ' '
+echo '========================================='
+echo ' '
+
 docker exec -it $ID bash
