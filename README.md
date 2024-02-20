@@ -48,3 +48,17 @@ transformers==4.27.1
 ```
 
 By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
+
+### Config [packages.txt]
+
+You can add your default apt-get installed packages here.
+
+```txt
+wget
+curl
+git
+```
+
+## Q&A
+
+If you have any use problems, please contact to simonlee235@gmail.com.
