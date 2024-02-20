@@ -61,4 +61,4 @@ git
 
 ## Q&A
 
-If you have any use problems, please contact to simonlee235@gmail.com.
+If you have any use problems, please contact to <simonlee235@gmail.com>.
