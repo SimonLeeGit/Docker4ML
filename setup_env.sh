@@ -1,2 +1,2 @@
-TAG=simon/ml:dev
-NVIDIA_PYTORCH_TAG=23.12-py3
+TAG=ml:dev
+NVIDIA_PYTORCH_TAG=24.01-py3
