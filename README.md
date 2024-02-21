@@ -21,7 +21,7 @@ bash docker_run.sh
 
 ## Custom Docker Config
 
-### Config [setup_env.sh]
+### Config [setup_env.sh](./setup_env.sh)
 
 You can modify this file to custom your settings.
 
@@ -39,7 +39,7 @@ Your built docker image tag, you can set it as what you what.
 The base docker image tag for your built docker image, here we use nvidia pytorch images.
 You can check it from [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
 
-### Config [requriements.txt]
+### Config [requriements.txt](./requirements.txt)
 
 You can add your default installed python libraries here.
 
@@ -49,7 +49,7 @@ transformers==4.27.1
 
 By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
 
-### Config [packages.txt]
+### Config [packages.txt](./packages.txt)
 
 You can add your default apt-get installed packages here.
 
@@ -58,6 +58,10 @@ wget
 curl
 git
 ```
+
+### Config [postinstallscript.sh](./postinstallscript.sh)
+
+You can add your custom script to run when build docker image.
 
 ## Q&A
 
