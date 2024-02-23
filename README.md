@@ -26,7 +26,7 @@ bash docker_run.sh
 You can modify this file to custom your settings.
 
 ```bash
-TAG=simon/ml:dev
+TAG=ml:dev
 NVIDIA_PYTORCH_TAG=23.12-py3
 ```
 
@@ -57,6 +57,15 @@ You can add your default apt-get installed packages here.
 wget
 curl
 git
+```
+
+### Config [ports.txt](./ports.txt)
+
+You can add some ports enabled for docker container here.
+
+```txt
+-p 6006:6006
+-p 8080:8080
 ```
 
 ### Config [postinstallscript.sh](./postinstallscript.sh)
