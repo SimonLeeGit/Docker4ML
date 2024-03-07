@@ -26,8 +26,8 @@ bash docker_run.sh
 You can modify this file to custom your settings.
 
 ```bash
-TAG=ml:dev
-BASE_TAG=nvcr.io/nvidia/pytorch:23.12-py3
+TAG=ubuntu:dev
+BASE_TAG=ubuntu:latest
 ```
 
 #### TAG
@@ -36,10 +36,8 @@ Your built docker image tag, you can set it as what you what.
 
 #### BASE_TAG
 
-The base docker image tag for your built docker image, here we use nvidia pytorch images.
-You can check it from [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
-
-Also, you can use other docker image as base, such as: [ubuntu](https://hub.docker.com/_/ubuntu/tags)
+The base docker image tag for your built docker image, here we use ubuntu images.
+You can check it from [https://hub.docker.com/_/ubuntu/tags](https://hub.docker.com/_/ubuntu/tags)
 
 ### Config [requriements.txt](./requirements.txt)
 
@@ -49,16 +47,13 @@ You can add your default installed python libraries here.
 transformers==4.27.1
 ```
 
-By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
-
 ### Config [packages.txt](./packages.txt)
 
 You can add your default apt-get installed packages here.
 
 ```txt
-wget
-curl
-git
+python3
+python3-pip
 ```
 
 ### Config [ports.txt](./ports.txt)
@@ -73,6 +68,10 @@ You can add some ports enabled for docker container here.
 ### Config [postinstallscript.sh](./postinstallscript.sh)
 
 You can add your custom script to run when build docker image.
+
+```bash
+ln -s /usr/bin/python3 /usr/bin/python
+```
 
 ## Q&A
 
