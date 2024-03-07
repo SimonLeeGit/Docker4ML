@@ -1,10 +1,10 @@
-ARG NVIDIA_PYTORCH_TAG
-FROM nvcr.io/nvidia/pytorch:${NVIDIA_PYTORCH_TAG}
+ARG BASE_TAG
+FROM ${BASE_TAG}
 ARG DEBIAN_FRONTEND=noninteractive
-COPY requirements.txt .
 COPY packages.txt .
+COPY requirements.txt .
 COPY postinstallscript.sh .
-RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y $(cat packages.txt)
+RUN pip install --no-cache-dir -r requirements.txt
 RUN bash postinstallscript.sh
 WORKDIR /workspace

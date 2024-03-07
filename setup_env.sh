@@ -1,2 +1,2 @@
 TAG=ml:dev
-NVIDIA_PYTORCH_TAG=24.01-py3
+BASE_TAG=nvcr.io/nvidia/pytorch:24.01-py3
