@@ -9,7 +9,7 @@ Useful docker scripts for ML developement.
 bash docker_build.sh
 ```
 
-![build_docker](build_docker.png)
+![build_docker](./doc/build_docker.png)
 
 ## Run Docker Container as Development Envirnoment
 
@@ -17,11 +17,11 @@ bash docker_build.sh
 bash docker_run.sh
 ```
 
-![run_docker](run_docker.png)
+![run_docker](./doc/run_docker.png)
 
 ## Custom Docker Config
 
-### Config [setup_env.sh](./setup_env.sh)
+### Config [setup_env.sh](./conf/setup_env.sh)
 
 You can modify this file to custom your settings.
 
@@ -49,7 +49,7 @@ Your user name used in docker container.
 
 Your user password used in docker container.
 
-### Config [requriements.txt](./requirements.txt)
+### Config [requriements.txt](./conf/requirements.txt)
 
 You can add your default installed python libraries here.
 
@@ -59,7 +59,7 @@ transformers==4.27.1
 
 By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
 
-### Config [packages.txt](./packages.txt)
+### Config [packages.txt](./conf/packages.txt)
 
 You can add your default apt-get installed packages here.
 
@@ -69,7 +69,7 @@ curl
 git
 ```
 
-### Config [ports.txt](./ports.txt)
+### Config [ports.txt](./conf/ports.txt)
 
 You can add some ports enabled for docker container here.
 
@@ -78,7 +78,10 @@ You can add some ports enabled for docker container here.
 -p 8080:8080
 ```
 
-### Config [postinstallscript.sh](./postinstallscript.sh)
+### Config [*installscript.sh]
+
+- [preinstallscript.sh](./conf/preinstallscript.sh): executed before pip installation
+- [postinstallscript.sh](./conf/postinstallscript.sh): executed after pip installation
 
 You can add your custom script to run when build docker image.
 
