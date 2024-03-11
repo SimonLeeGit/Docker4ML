@@ -1,1 +1,6 @@
-transformers==4.37.2
+torch==2.0.1
+transformers==4.32.0
+matplotlib==3.7.5
+numpy==1.24.4
+pandas==2.0.3
+tensorboard==2.14.0
