@@ -6,7 +6,7 @@ Useful docker scripts for ML developement.
 ## Build Docker Image
 
 ```bash
-bash docker_build.sh
+bash build.sh
 ```
 
 ![build_docker](./doc/build_docker.png)
@@ -14,7 +14,7 @@ bash docker_build.sh
 ## Run Docker Container as Development Envirnoment
 
 ```bash
-bash docker_run.sh
+bash run.sh
 ```
 
 ![run_docker](./doc/run_docker.png)
