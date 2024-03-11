@@ -61,7 +61,12 @@ Your user password used in docker container.
 You can add your default installed python libraries here.
 
 ```txt
-transformers==4.27.1
+torch==2.0.1
+transformers==4.32.0
+matplotlib==3.7.5
+numpy==1.24.4
+pandas==2.0.3
+tensorboard==2.14.0
 ```
 
 By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
@@ -71,9 +76,9 @@ By default, it has some libs installed, you can check it from [https://docs.nvid
 You can add your default apt-get installed packages here.
 
 ```txt
+python3
+python3-pip
 wget
-curl
-git
 ```
 
 ### Config [ports.txt](./conf/ports.txt)
