@@ -46,7 +46,7 @@ Your built docker image tag, you can set it as what you what.
 #### BASE_TAG
 
 The base docker image tag for your built docker image, here we use nvidia pytorch images.
-You can check it from [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
+You can check it from [hhttps://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags)
 
 ### USER_NAME
 
