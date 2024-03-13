@@ -5,6 +5,8 @@ Useful docker scripts for ML developement.
 
 ## Build Docker Image
 
+You can build your development docker image as below.
+
 ```bash
 bash build.sh
 ```
@@ -13,11 +15,36 @@ bash build.sh
 
 ## Run Docker Container as Development Envirnoment
 
+You can run built development docker container as your development environment as below.
+
 ```bash
 bash run.sh
 ```
 
 ![run_docker](./doc/run_docker.png)
+
+## Build CI Docker Image
+
+You can also build a CI docker image for your app to be runned at cloud environment.
+
+```bash
+bash build_ci.sh
+```
+
+![build_docker_ci](./doc/build_docker_ci.png)
+
+## Run CI Docker Container at cloud envirnoment
+
+```bash
+bash run_ci.sh <cmd>
+
+# <cmd> is your custom command to be runned in CI docker container, such as:
+#
+# bash run_ci.sh echo "hello world"
+# bash run_ci.sh python test.py, the work dir is your git repo root
+```
+
+![run_docker_ci](./doc/run_docker_ci.png)
 
 ## Custom Docker Config
 
@@ -73,7 +100,6 @@ You can add your default apt-get installed packages here.
 ```txt
 wget
 curl
-git
 ```
 
 ### Config [ports.txt](./conf/ports.txt)
