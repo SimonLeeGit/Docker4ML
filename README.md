@@ -55,6 +55,7 @@ You can modify this file to custom your settings.
 ```bash
 # Docker tag for new build image
 TAG=ml:dev
+CI_TAG=ml:ci
 
 # Base docker image tag used by docker build
 BASE_TAG=nvcr.io/nvidia/pytorch:24.01-py3
@@ -64,24 +65,42 @@ USER_NAME=developer
 
 # User password used in docker container
 USER_PASSWD=666666
+
+# Git repo for CI docker image
+GIT_REPO=https://github.com/SimonLeeGit/Docker4ML.git
+
+# Git branch for CI docker image
+GIT_BRANCH=main
 ```
 
 #### TAG
 
 Your built docker image tag, you can set it as what you what.
 
+#### CI_TAG
+
+Your bult docker image tag for ci usage, you can set it as what you what.
+
 #### BASE_TAG
 
 The base docker image tag for your built docker image, here we use nvidia pytorch images.
 You can check it from [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
 
-### USER_NAME
+#### USER_NAME
 
 Your user name used in docker container.
 
-### USER_PASSWD
+#### USER_PASSWD
 
 Your user password used in docker container.
+
+#### GIT_REPO
+
+For ci docker image, you need to set a valid git repo, in order to copy your runnable packages into the ci docker image.
+
+#### GIT_BRANCH
+
+For ci docker image, you need to set a valid git branch to clone your runnable package from your git repo.
 
 ### Config [requriements.txt](./conf/requirements.txt)
 
