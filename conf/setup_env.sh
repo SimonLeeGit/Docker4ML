@@ -1,6 +1,6 @@
 # Docker tag for new build image
-TAG=ml:dev
-CI_TAG=ml:ci
+TAG=simon235/ml:dev
+CI_TAG=simon235/ml:ci
 
 # Base docker image tag used by docker build
 BASE_TAG=nvcr.io/nvidia/pytorch:24.01-py3
