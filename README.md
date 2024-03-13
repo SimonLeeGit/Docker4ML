@@ -1,5 +1,8 @@
 # Docker4ML
 
+[![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/SimonLeeGit/Docker4ML/blob/main/LICENSE)
+![Docker](https://img.shields.io/badge/docker-gray?logo=docker)
+
 Useful docker scripts for ML developement.
 [https://github.com/SimonLeeGit/Docker4ML](https://github.com/SimonLeeGit/Docker4ML)
 
