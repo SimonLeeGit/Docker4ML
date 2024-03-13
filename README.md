@@ -49,6 +49,36 @@ bash run_ci.sh <cmd>
 
 ![run_docker_ci](./doc/run_docker_ci.png)
 
+## Push CI Docker Image to docker hub
+
+Sometimes, you need to push your built docker image to docker hub.
+But, you need docker login first. There two ways about this.
+
+### Way1: Docker Login from terminal
+
+```bash
+docker login --username <username>
+# here, you need to input with your password!
+```
+
+### Way2: Auto Login by Github workflow for CI
+
+You need to set the secrete by GitHub settings for DOCKER_USERNAME and DOCKER_ACCESS_TOKEN
+
+```yaml
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+```
+
+Then, you can push docker image to docker hub as below.
+
+```bash
+bash push_ci.sh
+```
+
 ## Custom Docker Config
 
 ### Config [setup_env.sh](./conf/setup_env.sh)
@@ -141,6 +171,10 @@ You can add your custom script to run when build docker image.
 ```bash
 ln -s /usr/bin/python3 /usr/bin/python
 ```
+
+## GitHub WorkFlow Support
+
+You can add github workflow by copy [docker_build_ci.yaml](./docker_build_ci.yml) to the path **.github/workflows/** in your github repo.
 
 ## Q&A
 
