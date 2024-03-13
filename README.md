@@ -5,6 +5,8 @@ Useful docker scripts for ML developement.
 
 ## Build Docker Image
 
+You can build your development docker image as below.
+
 ```bash
 bash build.sh
 ```
@@ -13,11 +15,36 @@ bash build.sh
 
 ## Run Docker Container as Development Envirnoment
 
+You can run built development docker container as your development environment as below.
+
 ```bash
 bash run.sh
 ```
 
 ![run_docker](./doc/run_docker.png)
+
+## Build CI Docker Image
+
+You can also build a CI docker image for your app to be runned at cloud environment.
+
+```bash
+bash build_ci.sh
+```
+
+![build_docker_ci](./doc/build_docker_ci.png)
+
+## Run CI Docker Container at cloud envirnoment
+
+```bash
+bash run_ci.sh <cmd>
+
+# <cmd> is your custom command to be runned in CI docker container, such as:
+#
+# bash run_ci.sh echo "hello world"
+# bash run_ci.sh python test.py, the work dir is your git repo root
+```
+
+![run_docker_ci](./doc/run_docker_ci.png)
 
 ## Custom Docker Config
 
@@ -28,6 +55,7 @@ You can modify this file to custom your settings.
 ```bash
 # Docker tag for new build image
 TAG=cuda:dev
+CI_TAG=cuda:ci
 
 # Base docker image tag used by docker build
 BASE_TAG=nvcr.io/nvidia/cuda:12.3.2-runtime-ubuntu22.04
@@ -37,24 +65,42 @@ USER_NAME=developer
 
 # User password used in docker container
 USER_PASSWD=666666
+
+# Git repo for CI docker image
+GIT_REPO=https://github.com/SimonLeeGit/Docker4ML.git
+
+# Git branch for CI docker image
+GIT_BRANCH=main
 ```
 
 #### TAG
 
 Your built docker image tag, you can set it as what you what.
 
+#### CI_TAG
+
+Your bult docker image tag for ci usage, you can set it as what you what.
+
 #### BASE_TAG
 
 The base docker image tag for your built docker image, here we use nvidia pytorch images.
 You can check it from [hhttps://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags)
 
-### USER_NAME
+#### USER_NAME
 
 Your user name used in docker container.
 
-### USER_PASSWD
+#### USER_PASSWD
 
 Your user password used in docker container.
+
+#### GIT_REPO
+
+For ci docker image, you need to set a valid git repo, in order to copy your runnable packages into the ci docker image.
+
+#### GIT_BRANCH
+
+For ci docker image, you need to set a valid git branch to clone your runnable package from your git repo.
 
 ### Config [requriements.txt](./conf/requirements.txt)
 
