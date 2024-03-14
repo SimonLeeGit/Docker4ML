@@ -42,8 +42,8 @@ jobs:
 
       - name: Build docker image
         run: |
-          bash docker/build_ci.sh
+          bash docker/build_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
 
       - name: Push docker image
         run: |
-          bash docker/push_ci.sh
+          bash docker/push_ci.sh -u ${{ secrets.DOCKER_USERNAME }}

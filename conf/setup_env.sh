@@ -1,9 +1,9 @@
 # Docker tag for new build image
-TAG=simon235/cuda:dev
-CI_TAG=simon235/cuda:ci
+TAG=cuda:dev
+CI_TAG=cuda:ci
 
 # Base docker image tag used by docker build
-BASE_TAG=nvcr.io/nvidia/cuda:12.3.2-runtime-ubuntu22.04
+BASE_IMG=nvcr.io/nvidia/cuda:12.3.2-runtime-ubuntu22.04
 
 # User name used in docker container
 USER_NAME=developer
