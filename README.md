@@ -34,6 +34,12 @@ You can also build a CI docker image for your app to be runned at cloud environm
 bash build_ci.sh
 ```
 
+Or, you can build with a valid DOCKER_USERNAME
+
+```bash
+bash build_ci.sh -u <DOCKER_USERNAME>
+```
+
 ![build_docker_ci](./doc/build_docker_ci.png)
 
 ## Run CI Docker Container at cloud envirnoment
@@ -47,6 +53,12 @@ bash run_ci.sh <cmd>
 # bash run_ci.sh python test.py, the work dir is your git repo root
 ```
 
+Or, you can build with a valid DOCKER_USERNAME
+
+```bash
+bash run_ci.sh -u <DOCKER_USERNAME> <cmd>
+```
+
 ![run_docker_ci](./doc/run_docker_ci.png)
 
 ## Push CI Docker Image to docker hub
@@ -57,7 +69,7 @@ But, you need docker login first. There two ways about this.
 ### Way1: Docker Login from terminal
 
 ```bash
-docker login --username <username>
+docker login --username <DOCKER_USERNAME>
 # here, you need to input with your password!
 ```
 
@@ -76,7 +88,7 @@ You need to set the secrete by GitHub settings for DOCKER_USERNAME and DOCKER_AC
 Then, you can push docker image to docker hub as below.
 
 ```bash
-bash push_ci.sh
+bash push_ci.sh -u <DOCKER_USERNAME>
 ```
 
 ## Custom Docker Config
@@ -91,7 +103,7 @@ TAG=ubuntu:dev
 CI_TAG=ubuntu:ci
 
 # Base docker image tag used by docker build
-BASE_TAG=ubuntu:latest
+BASE_IMG=ubuntu:latest
 
 # User name used in docker container
 USER_NAME=developer
@@ -114,7 +126,7 @@ Your built docker image tag, you can set it as what you what.
 
 Your bult docker image tag for ci usage, you can set it as what you what.
 
-#### BASE_TAG
+#### BASE_IMG
 
 The base docker image tag for your built docker image, here we use ubuntu images.
 You can check it from [https://hub.docker.com/_/ubuntu/tags](https://hub.docker.com/_/ubuntu/tags)

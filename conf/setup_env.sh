@@ -1,9 +1,9 @@
 # Docker tag for new build image
-TAG=simon235/ubuntu:dev
-CI_TAG=simon235/ubuntu:ci
+TAG=ubuntu:dev
+CI_TAG=ubuntu:ci
 
 # Base docker image tag used by docker build
-BASE_TAG=ubuntu:latest
+BASE_IMG=ubuntu:latest
 
 # User name used in docker container
 USER_NAME=developer
