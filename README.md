@@ -34,12 +34,6 @@ You can also build a CI docker image for your app to be runned at cloud environm
 bash build_ci.sh
 ```
 
-Or, you can build with a valid DOCKER_USERNAME
-
-```bash
-bash build_ci.sh -u <DOCKER_USERNAME>
-```
-
 ![build_docker_ci](./doc/build_docker_ci.png)
 
 ## Run CI Docker Container at cloud envirnoment
@@ -53,37 +47,7 @@ bash run_ci.sh <cmd>
 # bash run_ci.sh python test.py, the work dir is your git repo root
 ```
 
-Or, you can build with a valid DOCKER_USERNAME
-
-```bash
-bash run_ci.sh -u <DOCKER_USERNAME> <cmd>
-```
-
 ![run_docker_ci](./doc/run_docker_ci.png)
-
-## Push CI Docker Image to docker hub
-
-Sometimes, you need to push your built docker image to docker hub.
-But, you need docker login first. There two ways about this.
-
-### Way1: Docker Login from terminal
-
-```bash
-docker login --username <DOCKER_USERNAME>
-# here, you need to input with your password!
-```
-
-### Way2: Auto Login by Github workflow for CI
-
-You need to set the secrete by GitHub settings for DOCKER_USERNAME and DOCKER_ACCESS_TOKEN
-
-![github_secrets](./doc/github_secrets.png)
-
-Then, you can push docker image to docker hub as below.
-
-```bash
-bash push_ci.sh -u <DOCKER_USERNAME>
-```
 
 ## Custom Docker Config
 
@@ -171,6 +135,12 @@ You can add your custom script to run when build docker image.
 ## GitHub WorkFlow Support
 
 You can add github workflow by copy [docker_build_ci.yaml](./docker_build_ci.yml) to the path **.github/workflows/** in your github repo.
+
+Then, you should set DOCKER_USERNAME and DOCKER_ACCESS_TOKEN in GitHub settings.
+
+![github_secrets](./doc/github_secrets.png)
+
+Finally, you can check the actions for the workflow result.
 
 ## Q&A
 
