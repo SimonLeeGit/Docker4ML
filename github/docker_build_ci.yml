@@ -7,7 +7,7 @@ on:
 
 env:
   # the docker root work dir in workspace
-  docker_workdir: docker
+  DOCKER_WORKDIR: ${{github.workspace}}/docker
 
 jobs:
   build_ci_docker_image:
@@ -46,13 +46,14 @@ jobs:
 
       - name: Build docker image
         run: |
-          bash ${{docker_workdir}}/build_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
+          bash ${{env.DOCKER_WORKDIR}}/build_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
 
       - name: Push docker image
         run: |
-          bash ${{docker_workdir}}/push_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
+          bash ${{env.DOCKER_WORKDIR}}/push_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
 
   run_autotest:
+    needs: build_ci_docker_image
     runs-on: ubuntu-latest  
     steps:
 
@@ -79,10 +80,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
+      - name: Check out code
+        uses: actions/checkout@v4
+      
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive
+
       - name: Pull docker image
         run: |
-          bash ${{docker_workdir}}/pull_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
+          bash ${{env.DOCKER_WORKDIR}}/pull_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
 
       - name: Run autottest
         run: |
-          bash ${{docker_workdir}}/run_ci.sh -u ${{ secrets.DOCKER_USERNAME }} echo "hello world"
+          bash ${{env.DOCKER_WORKDIR}}/run_ci.sh -u ${{ secrets.DOCKER_USERNAME }} echo "hello world"
