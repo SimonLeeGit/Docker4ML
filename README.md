@@ -104,12 +104,6 @@ USER_NAME=developer
 
 # User password used in docker container
 USER_PASSWD=666666
-
-# Git repo for CI docker image
-GIT_REPO=https://github.com/SimonLeeGit/Docker4ML.git
-
-# Git branch for CI docker image
-GIT_BRANCH=main
 ```
 
 #### TAG
@@ -132,14 +126,6 @@ Your user name used in docker container.
 #### USER_PASSWD
 
 Your user password used in docker container.
-
-#### GIT_REPO
-
-For ci docker image, you need to set a valid git repo, in order to copy your runnable packages into the ci docker image.
-
-#### GIT_BRANCH
-
-For ci docker image, you need to set a valid git branch to clone your runnable package from your git repo.
 
 ### Config [requriements.txt](./conf/requirements.txt)
 
