@@ -1,9 +1,9 @@
 # Docker tag for new build image
-TAG=simon235/ml:dev
-CI_TAG=simon235/ml:ci
+TAG=ml:dev
+CI_TAG=ml:ci
 
 # Base docker image tag used by docker build
-BASE_TAG=nvcr.io/nvidia/pytorch:24.01-py3
+BASE_IMG=nvcr.io/nvidia/pytorch:24.01-py3
 
 # User name used in docker container
 USER_NAME=developer
