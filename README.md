@@ -79,7 +79,7 @@ You need to set the secrete by GitHub settings for DOCKER_USERNAME and DOCKER_AC
 
 ```yaml
       - name: Log in to Docker Hub
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
