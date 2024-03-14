@@ -77,14 +77,6 @@ docker login --username <DOCKER_USERNAME>
 
 You need to set the secrete by GitHub settings for DOCKER_USERNAME and DOCKER_ACCESS_TOKEN
 
-```yaml
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-```
-
 ![github_secrets](./doc/github_secrets.png)
 
 Then, you can push docker image to docker hub as below.
