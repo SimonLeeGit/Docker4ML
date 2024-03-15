@@ -2,7 +2,7 @@
 
 WORK_DIR=$(dirname "$(readlink -f "$0")")
 DOCKER_USER=
-source $WORK_DIR/conf/setup_env.sh
+source $WORK_DIR/../conf/setup_env.sh
 
 # Note:
 #   Need to docker login first with your dockerhub username & password
