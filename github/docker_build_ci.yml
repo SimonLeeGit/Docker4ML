@@ -46,7 +46,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          bash ${{env.DOCKER_WORKDIR}}/ci/build_ci.sh -u ${{ secrets.DOCKER_USERNAME }}
+          bash ${{env.DOCKER_WORKDIR}}/ci/build_ci.sh -u ${{ secrets.DOCKER_USERNAME }} -d ${{ github.workspace }}
 
       - name: Push docker image
         run: |
