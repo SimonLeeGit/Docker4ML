@@ -43,9 +43,6 @@ CI_TAG=ml:ci
 # Base docker image tag used by docker build
 BASE_IMG=nvcr.io/nvidia/pytorch:24.01-py3
 
-# User name used in docker container
-USER_NAME=developer
-
 # User password used in docker container
 USER_PASSWD=666666
 ```
@@ -63,13 +60,9 @@ Your bult docker image tag for ci usage, you can set it as what you what.
 The base docker image tag for your built docker image, here we use nvidia pytorch images.
 You can check it from [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
 
-#### USER_NAME
-
-Your user name used in docker container.
-
 #### USER_PASSWD
 
-Your user password used in docker container.
+Your user password used in docker container, your user name will keep according with your host user name.
 
 ### Config [requriements.txt](./conf/requirements.txt)
 
