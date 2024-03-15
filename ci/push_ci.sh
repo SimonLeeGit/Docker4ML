@@ -42,4 +42,5 @@ done
 shift $((OPTIND - 1))
 
 # Push to docker hub
+docker push $DOCKER_USER$TAG
 docker push $DOCKER_USER$CI_TAG
