@@ -84,8 +84,6 @@ pandas==2.0.3
 tensorboard==2.14.0
 ```
 
-By default, it has some libs installed, you can check it from [https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-01.html)
-
 ### Config [packages.txt](./conf/packages.txt)
 
 You can add your default apt-get installed packages here.
