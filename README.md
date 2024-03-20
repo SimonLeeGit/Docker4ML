@@ -99,6 +99,10 @@ You can add some ports enabled for docker container here.
 
 You can add your custom script to run when build docker image.
 
+### Config [entryscript.sh](./conf/entryscript.sh)
+
+You can add your custom script to run when docker container run.
+
 ## GitHub WorkFlow Support
 
 You can add github workflow by copy [docker_build_ci.yaml](./docker_build_ci.yml) to the path **.github/workflows/** in your github repo.
